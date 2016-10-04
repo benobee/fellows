@@ -1,0 +1,108 @@
+.app-module.modal{
+	.container{
+		height:100vh;
+		background:rgba(10,10,10,0.8);
+		opacity:0;
+		z-index:-3;
+		position: fixed;
+		top:0;
+		left:0;
+		width:100%;
+	    transition: 0.4s;
+		display:flex;
+		align-items:center;
+		overflow-y:scroll;
+    	overflow-x:hidden;		
+    	&::-webkit-scrollbar{
+    		display:none;
+    	}
+		@media screen and (max-width:1024px){
+			align-items:flex-start;
+		}
+		&.is-rendered{
+			opacity:1;
+			transition: 0.2s;
+			z-index:99999999;
+			.content{
+				opacity:1;
+				transform:translateY(0px);
+				-webkit-transform:translateY(0px);
+				-moz-transform:translateY(0px);
+				-o-transform:translateY(0px);		
+			}
+		}
+		.content{
+			opacity:0;
+			transition: 0.3s;
+			transform:translateY(50px);
+			-webkit-transform:translateY(50px);
+			-moz-transform:translateY(50px);
+			-o-transform:translateY(50px);
+			max-width:1200px;
+			background:white;
+			margin:0 auto;
+			padding:2em;
+			border-radius:4px;
+			position: relative;
+			.body{
+				strong{
+			      font-size:1.4em;
+			    }
+			    p{
+			    	font-size:0.8em !important;
+			        line-height:1.6em;
+			    }
+			}
+			.info{
+				display:flex;
+				flex-direction:column;
+				flex-wrap:wrap;
+				.name{
+					font-weight:800;
+					font-size:1.7em;
+				}
+				.class, .location, .area{
+					font-size:1.1em;
+					line-height:1.7em;
+				}
+				.area{
+					p{
+						margin:0;
+					}
+				}
+			}
+			.header{
+				display:flex;
+				flex-direction:row;
+				flex-wrap:wrap;
+				margin-bottom:1em;
+			}
+            .item-thumbnail-wrapper{
+            	margin-right:1em;
+                @media screen and (max-width:500px){
+                	margin-bottom:1em;
+                	.image{
+                 		width:200px;
+                		height:200px;               		
+                	}
+                }
+                .image{
+            		height:150px;
+            		width:150px;
+                    transition:opacity 0.3s;
+                    background-size:cover;
+                    background-position: center center;               
+                }
+            }
+			.close{
+				margin:2%;
+				color:#d8d8d8;
+				position: absolute;
+				right:2%;
+				font-size:2em;
+				top:1%;
+				cursor:pointer;
+			}
+		}
+	}
+}
