@@ -9,8 +9,6 @@ class Modal extends React.Component {
         this.state = {
             open: false
         }
-
-        console.log(this);
     }
     componentDidUpdate(prevProps, prevState) {
         setTimeout(() => {

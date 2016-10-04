@@ -29,15 +29,13 @@ class Module {
 class App_Build {
     constructor() {
         const target = $("#fellows-render-target");
-        const request = this.getPageData("https://dona-lubecki.squarespace.com/dalai-lama-fellows");
+        const request = this.getPageData("/dalai-lama-fellows");
 
         $.when(request).done((data) => {
             const fellowsList = new Module(
                 <FellowsList data={data} target={target}/>
             );
         });
-
-        console.log(this);
     }
     getPageData(url){
         return $.ajax({

@@ -14,8 +14,6 @@ class FellowsList extends React.Component {
         	filter: ''
         }
         this.fullArray = this.processArray(this.props.data.items);
-
-        console.log(this);
     }
     processArray(array){
 		return _.map(array, (i) => {
